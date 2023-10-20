@@ -9,3 +9,57 @@ var isAdult = true;
 var a = null;
 // & undefined type
 var b;
+// ### array types
+var names = ["Raim", "karim"];
+var names1 = ["Raim", "karim"];
+var ages = [10, 20, 30];
+var ages1 = [10, 20, 30];
+// types include in functions
+function add(num1, num2) {
+    if (num1 === void 0) { num1 = 0; }
+    if (num2 === void 0) { num2 = 0; }
+    return num1 + num2;
+}
+console.log("🚀 ~ file: index.ts:29 ~ add ~ add:", add(120, 20));
+// with string
+function sumIsBiggerThen20(num1, num2) {
+    if (num1 === void 0) { num1 = 0; }
+    if (num2 === void 0) { num2 = 0; }
+    var sum = num1 + num2;
+    if (sum > 20) {
+        return "sum is bigger then 20";
+    }
+    else {
+        return "something went wrong";
+    }
+}
+// ## union types
+function printCarModel(model) {
+    console.log("My car model is " + model);
+}
+console.log(printCarModel(2063));
+console.log(printCarModel("2063Y"));
+// ## suppos we need to add some number and user want to give as a peramiter string or number
+function pow(num1) {
+    if (typeof num1 === "number") {
+        return num1 * num1;
+    }
+}
+var userDataCollection = [];
+function setUserData(userData) {
+    userDataCollection.push(userData);
+    console.log(userDataCollection);
+}
+setUserData({ age: 25, uName: "Rahim", uId: "1" });
+var printAdminData = function (adminData) {
+    console.log(adminData);
+};
+printAdminData({ age: 25, name: "Rahim", uId: "1", isAdmin: true });
+printAdminData({ age: 25, name: "Rahim", uId: 14524, isAdmin: true });
+var admin = {
+    age: 18,
+    isAdmin: true,
+    uId: "123",
+    uName: "fsdf",
+};
+console.log(admin);
