@@ -63,3 +63,22 @@ var admin = {
     uName: "fsdf",
 };
 console.log(admin);
+// ## Function type for callback functions
+var addThenDivideBy2 = function (num1, num2, add, divide) {
+    var sum = add(num1, num2);
+    console.log("🚀 ~ file: index.ts:115 ~ sum:", sum);
+    var remains = divide(num1, num2);
+    console.log("🚀 ~ file: index.ts:116 ~ remains:", remains);
+};
+addThenDivideBy2(8, 2, function (a, b) { return a + b; }, function (a, b) { return a / b; });
+var carDetails = {
+    brandName: "Toyota",
+    colors: ["black", "white"],
+    model: "8662",
+    price: "150000 TK",
+    feature: {
+        looks: "good",
+        mileages: "620 km/hours",
+    },
+};
+console.log("🚀 ~ file: index.ts:151 ~ carDetails:", carDetails);

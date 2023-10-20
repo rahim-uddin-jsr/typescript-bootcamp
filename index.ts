@@ -80,6 +80,7 @@ type adminType = {
   uId: string | number;
   age: number;
   isAdmin: true;
+  makeOnlyUser?: () => void; //optional type assertion
 };
 
 const printAdminData = (adminData: adminType): void => {
@@ -102,3 +103,55 @@ const admin: InAdminDataTypes = {
 };
 
 console.log(admin);
+
+// ## Function type for callback functions
+
+const addThenDivideBy2 = (
+  num1: number,
+  num2: number,
+  add: Function,
+  divide: Function
+): void => {
+  const sum = add(num1, num2);
+  console.log("🚀 ~ file: index.ts:115 ~ sum:", sum);
+  const remains = divide(num1, num2);
+  console.log("🚀 ~ file: index.ts:116 ~ remains:", remains);
+};
+
+addThenDivideBy2(
+  8,
+  2,
+  (a: number, b: number): number => a + b,
+  (a: number, b: number): number => a / b
+);
+
+// ### interfaces types in typescript
+
+interface carDetailTypes {
+  model: string;
+  brandName: string;
+  price: string | number;
+  colors: Array<string>;
+  feature: {
+    looks: string;
+    mileages: string | number;
+  };
+}
+
+const carDetails: carDetailTypes = {
+  brandName: "Toyota",
+  colors: ["black", "white"],
+  model: "8662",
+  price: "150000 TK",
+  feature: {
+    looks: "good",
+    mileages: "620 km/hours",
+  },
+};
+console.log("🚀 ~ file: index.ts:151 ~ carDetails:", carDetails);
+
+// interface with inheritance
+interface soledCarsTypes extends carDetailTypes {
+  sold: boolean;
+  soledPrice: string | number;
+}
