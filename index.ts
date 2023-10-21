@@ -155,3 +155,33 @@ interface soledCarsTypes extends carDetailTypes {
   sold: boolean;
   soledPrice: string | number;
 }
+
+//#### difference between interface and type alias
+
+// renaming primitive
+
+type StringType = string;
+type numberType = number;
+
+// interface StringInterface=string;
+// 'string' only refers to a type, but is being used as a value here.
+
+// filed addition
+// type alias can't be changed after declare
+
+// type BikeType = {
+//   make: string;
+// };
+// type BikeType = {
+//   model: number;
+// };
+
+// interface can be also changes after declaration
+interface IbikeType {
+  make: string;
+}
+interface IbikeType {
+  model: number;
+}
+
+
